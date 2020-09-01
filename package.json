@@ -1,0 +1,25 @@
+{
+    "name": "fsl-lang",
+    "displayName": "FSL lang",
+    "description": "FSL language extension",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.48.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "fsl",
+            "aliases": ["FSL", "fsl"],
+            "extensions": [".fsl"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "fsl",
+            "scopeName": "source.fsl",
+            "path": "./syntaxes/fsl.tmLanguage.json"
+        }]
+    }
+}

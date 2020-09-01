@@ -1,0 +1,86 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "FSL",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#entity"
+		},
+		{
+			"include": "#constant"
+		},
+		{
+			"include": "#support"
+		},
+		{
+			"include": "#storage"
+		}
+	],
+	"repository": {
+		"entity": {
+			"patterns": [
+				{
+					"name": "entity.name.type.fsl",
+					"match": "\\b[A-Z][a-zA-Z0-9_]*"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.fsl",
+					"match": "\\b(if|else|match|case|generate|goto|relay|finish)\\b"
+				},
+				{
+					"name": "keyword.other.fsl",
+					"match": "\\b(class|module|stage|def|var|val)\\b"
+				}
+			]
+		},
+		"storage": {
+			"patterns": [
+				{
+					"name": "storage.modifier.fsl",
+					"match": "\\b(input|output|reg|mem|private|public)\\b"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.fsl",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.fsl",
+					"match": "\\\\."
+				}
+			]
+		},
+		"constant": {
+			"patterns": [
+				{
+					"name": "constant.numeric.fsl",
+					"match": "(0b|0x)?[0-9]+"
+				},
+				{
+					"name": "constant.language.fsl",
+					"match": "\\b(true|false)\\b"
+				}
+			]
+		},
+		"support": {
+			"patterns": [
+				{
+					"name": "support.function.fsl",
+					"match": "\\$[a-z_][a-zA-Z0-9]*"
+				}
+			]
+		}
+	},
+	"scopeName": "source.fsl"
+}
